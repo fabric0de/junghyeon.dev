@@ -1,5 +1,4 @@
-// src/components/layout/Header.tsx
-"use client"; // 클라이언트 컴포넌트로 설정
+"use client";
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -23,8 +22,8 @@ const Header = () => {
 
   return (
     <header className="py-4">
-      <nav className="container mx-auto flex justify-between items-center">
-        <ul className="flex space-x-4">
+      <nav className="container mx-auto flex justify-between items-center px-8">
+        <ul className="flex space-x-4 text-sm">
           <li>
             <Link href="/">Blog</Link>
           </li>
@@ -37,7 +36,7 @@ const Header = () => {
         </ul>
         <div className="flex items-center space-x-4">
           <a
-            href="https://github.com/fabric0de"
+            href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
           >
