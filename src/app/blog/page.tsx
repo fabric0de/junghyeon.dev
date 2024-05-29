@@ -1,49 +1,42 @@
 // src/app/blog/page.tsx
-import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import React from "react";
+import PostList, { Post } from "@/components/PostList";
 
-type FrontMatter = {
-  title: string;
-  date: string;
-};
-
-type PostSummary = {
-  slug: string;
-  frontMatter: FrontMatter;
-};
-
-const getPosts = (): PostSummary[] => {
+const getPosts = (): Post[] => {
   const postsDirectory = path.join(process.cwd(), "src/posts");
   const filenames = fs.readdirSync(postsDirectory);
-  return filenames.map((filename) => {
+
+  const posts = filenames.map((filename) => {
     const filePath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(fileContents);
-    const frontMatter = data as FrontMatter;
-    const slug = filename.replace(/\.mdx$/, "");
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { data } = matter(fileContent);
+
     return {
-      slug,
-      frontMatter,
+      slug: filename.replace(".mdx", ""),
+      frontMatter: {
+        title: data.title || "Untitled",
+        date: data.date || new Date().toISOString(),
+        category: data.category || "Uncategorized",
+        tags: data.tags || [],
+        description: data.description || "",
+        thumbnail: data.thumbnail || "",
+      },
     };
   });
+
+  return posts;
 };
 
 export default function BlogPage() {
   const posts = getPosts();
+
   return (
-    <div>
-      <h1 className="text-4xl font-bold mb-4">Blog</h1>
-      <ul>
-        {posts.map(({ slug, frontMatter }) => (
-          <li key={slug} className="mb-2">
-            <Link href={`/blog/${slug}`}>{frontMatter.title}</Link>
-            <p className="text-gray-600">{frontMatter.date}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold mb-2">Blog</h1>
+      <div className="font-blod mb-8">정보를 공유하고 정리하는 공간입니다.</div>
+      <PostList posts={posts} />
     </div>
   );
 }

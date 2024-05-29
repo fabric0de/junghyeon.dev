@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <header className="py-4">
-      <nav className="container mx-auto flex justify-between items-center px-8">
+      <nav className="container mx-auto flex justify-between items-center">
         <ul className="flex space-x-4 text-sm">
           <li>
             <Link href="/">Blog</Link>

@@ -5,7 +5,7 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="py-4 mt-8">
-      <div className="container mx-auto px-8 text-center">
+      <div className="container mx-auto text-center">
         <div className="flex justify-center space-x-4 mb-4">
           <a
             href="https://github.com/yourusername"
