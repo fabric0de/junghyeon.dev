@@ -21,32 +21,35 @@ const Header = () => {
   };
 
   return (
-    <header className="py-4">
-      <nav className="container mx-auto flex justify-between items-center">
-        <ul className="flex space-x-4 text-sm">
-          <li>
-            <Link href="/">Blog</Link>
-          </li>
-          <li>
-            <Link href="/project">Projects</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-        </ul>
-        <div className="flex items-center space-x-4">
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="text-2xl" />
-          </a>
-          <button onClick={toggleDarkMode} className="text-2xl">
-            {darkMode ? <BsSun /> : <BsMoon />}
-          </button>
-        </div>
-      </nav>
+    <header className="flex justify-between items-center  py-4 mx-32 mb-4 text-sm border-b">
+      <div className="flex justify-start ">
+        <nav>
+          <ul className="flex gap-5">
+            <li>
+              <Link href="/">Blog</Link>
+            </li>
+            <li>
+              <Link href="/project">Projects</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="flex items-center">
+        <a
+          href="https://github.com/fabric0de"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mr-4"
+        >
+          <FaGithub className="text-2xl" />
+        </a>
+        <button onClick={toggleDarkMode} className="text-2xl">
+          {darkMode ? <BsSun /> : <BsMoon />}
+        </button>
+      </div>
     </header>
   );
 };

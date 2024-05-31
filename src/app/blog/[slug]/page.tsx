@@ -1,10 +1,10 @@
-// src/app/blog/[slug]/page.tsx
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import BlogContent from "@/components/BlogContent";
+import { Metadata } from "next";
 
 type BlogPostProps = {
   params: {
@@ -15,6 +15,10 @@ type BlogPostProps = {
 type FrontMatter = {
   title: string;
   date: string;
+  category: string;
+  tags: string[];
+  description: string;
+  thumbnail?: string;
 };
 
 type PostContent = {
@@ -31,7 +35,9 @@ const getPostContent = async (slug: string): Promise<PostContent> => {
   return { frontMatter, mdxSource };
 };
 
-export async function generateMetadata({ params }: BlogPostProps) {
+export async function generateMetadata({
+  params,
+}: BlogPostProps): Promise<Metadata> {
   const { slug } = params;
   const { frontMatter } = await getPostContent(slug);
   return {

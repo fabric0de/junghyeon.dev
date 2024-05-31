@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         <div className="flex justify-center space-x-4 mb-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/fabric0de"
             target="_blank"
             rel="noopener noreferrer"
           >

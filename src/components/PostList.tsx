@@ -68,7 +68,7 @@ const PostList = ({ posts }: PostListProps) => {
                   alt={frontMatter.title}
                   width={128} // 이미지의 실제 너비에 맞게 설정
                   height={128} // 이미지의 실제 높이에 맞게 설정
-                  className="object-cover w-32 h-24 rounded"
+                  className="object-cover w-32 h-20 rounded"
                 />
               )}
             </Link>
