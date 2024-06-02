@@ -15,7 +15,7 @@ const Footer = () => {
             <FaGithub className="text-2xl text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" />
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:junghyeonkim.dev@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
