@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
+import { SiGitbook } from "react-icons/si";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -45,6 +46,14 @@ const Header = () => {
           className="mr-4"
         >
           <FaGithub className="text-2xl" />
+        </a>
+        <a
+          href="https://yourgitbook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mr-4"
+        >
+          <SiGitbook className="text-2xl" />
         </a>
         <button onClick={toggleDarkMode} className="text-2xl">
           {darkMode ? <BsSun /> : <BsMoon />}
