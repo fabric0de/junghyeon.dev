@@ -1,9 +1,8 @@
-/* src/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 다크 모드 스타일 추가 */
+/* 기본 스타일 */
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
@@ -11,7 +10,7 @@
 
 .dark {
   --color-bg: #1a202c;
-  --color-text: #a0aec0;
+  --color-text: #ffffff; /* 다크 모드에서 텍스트 색상을 흰색으로 설정 */
 }
 
 body {
@@ -22,4 +21,38 @@ body {
 .sticky {
   position: sticky;
   top: 5rem;
+}
+
+/* 마크다운 스타일 */
+.markdown {
+  @apply prose; /* Tailwind Typography 적용 */
+}
+
+.dark .markdown {
+  @apply prose-dark; /* 다크 모드에서 Tailwind Typography 적용 */
+}
+
+/* 다크 모드에서 prose-dark 정의 */
+@layer components {
+  .prose {
+    /* 기본 마크다운 스타일 */
+  }
+
+  .prose-dark {
+    --tw-prose-body: #ffffff; /* 다크 모드에서 기본 텍스트 색상 */
+    --tw-prose-headings: #ffffff; /* 다크 모드에서 헤딩 텍스트 색상 */
+    --tw-prose-links: #9d9d9d; /* 다크 모드에서 링크 텍스트 색상 */
+    --tw-prose-bold: #ffffff; /* 다크 모드에서 볼드 텍스트 색상 */
+    --tw-prose-counters: #ffffff; /* 다크 모드에서 카운터 텍스트 색상 */
+    --tw-prose-bullets: #ffffff; /* 다크 모드에서 불릿 텍스트 색상 */
+    --tw-prose-hr: #4b5563; /* 다크 모드에서 hr 색상 */
+    --tw-prose-quotes: #ffffff; /* 다크 모드에서 인용구 텍스트 색상 */
+    --tw-prose-quote-borders: #4b5563; /* 다크 모드에서 인용구 테두리 색상 */
+    --tw-prose-captions: #ffffff; /* 다크 모드에서 캡션 텍스트 색상 */
+    --tw-prose-code: #ffffff; /* 다크 모드에서 코드 텍스트 색상 */
+    --tw-prose-pre-code: #ffffff; /* 다크 모드에서 pre 코드 텍스트 색상 */
+    --tw-prose-pre-bg: #2d3748; /* 다크 모드에서 pre 배경 색상 */
+    --tw-prose-th-borders: #4b5563; /* 다크 모드에서 테이블 헤더 테두리 색상 */
+    --tw-prose-td-borders: #4b5563; /* 다크 모드에서 테이블 데이터 테두리 색상 */
+  }
 }

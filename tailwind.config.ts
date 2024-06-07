@@ -17,6 +17,10 @@ const config: Config = {
       spacing: {
         "20": "5rem",
       },
+      colors: {
+        "dark-bg": "#1a1a1a",
+        "dark-text": "#e5e5e5",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
