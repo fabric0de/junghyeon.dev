@@ -32,9 +32,9 @@ const Header = () => {
             <li>
               <Link href="/project">Projects</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/about">About</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
@@ -48,7 +48,7 @@ const Header = () => {
           <FaGithub className="text-2xl" />
         </a>
         <a
-          href="https://yourgitbook.com"
+          href="https://fabric0de.gitbook.io/fabric0des-wiki/"
           target="_blank"
           rel="noopener noreferrer"
           className="mr-4"
