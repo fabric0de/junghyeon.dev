@@ -13,7 +13,7 @@ const nextConfig = {
     return [
       {
         source: "/sitemap.xml",
-        destination: "/api/sitemap",
+        destination: "/sitemap",
         permanent: true,
       },
     ];
