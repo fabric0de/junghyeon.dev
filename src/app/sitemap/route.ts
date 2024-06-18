@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import path from "path";
 
 const generateSitemap = async () => {
-  const baseUrl = "http://localhost:3000"; // Replace with your actual website URL
+  const baseUrl = "https://junghyeon-dev.vercel.app"; // Replace with your actual website URL
   const postsDirectory = path.join(process.cwd(), "src/posts");
   const filenames = await fs.readdir(postsDirectory);
 
