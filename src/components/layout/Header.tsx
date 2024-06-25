@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
-import { BsSun, BsMoon } from "react-icons/bs";
+import { BsSun, BsMoon, BsGear } from "react-icons/bs";
 import { SiGitbook } from "react-icons/si";
 
 const Header = () => {
@@ -44,9 +44,19 @@ const Header = () => {
     setShowOptions(false);
   };
 
+  const getIcon = () => {
+    if (darkMode === "system") {
+      return <BsGear />;
+    } else if (darkMode === "dark") {
+      return <BsMoon />;
+    } else {
+      return <BsSun />;
+    }
+  };
+
   return (
     <header className="py-4 border-b">
-      <div className="container mx-auto  flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center">
         <nav>
           <ul className="flex gap-5">
             <li>
@@ -74,7 +84,7 @@ const Header = () => {
           </a>
           <div className="relative">
             <button onClick={toggleDarkMode} className="text-2xl">
-              {darkMode === "dark" ? <BsSun /> : <BsMoon />}
+              {getIcon()}
             </button>
             {showOptions && (
               <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20">
