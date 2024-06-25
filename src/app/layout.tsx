@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import "@/style/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -9,13 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>{/* 여기에 meta 태그, title 등 추가 가능 */}</head>
       <body>
-        <div className="flex flex-col min-h-screen mx-auto max-w-screen-lg ">
+        <div className="container mx-auto px-4 md:px-8">
           <Header />
-          <main className="flex-grow px-32">
-            <div className="w-full">{children}</div>
-          </main>
+          <main className="py-8">{children}</main>
           <Footer />
         </div>
       </body>

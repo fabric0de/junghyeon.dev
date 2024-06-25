@@ -30,14 +30,12 @@ const PostList = ({ posts }: PostListProps) => {
     setCurrentPage(page);
   };
 
-  // 최신순으로 정렬
   const sortedPosts = posts.sort(
     (a, b) =>
       new Date(b.frontMatter.date).getTime() -
       new Date(a.frontMatter.date).getTime()
   );
 
-  // 현재 페이지에 표시할 포스트 계산
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
   const selectedPosts = sortedPosts.slice(
     startIndex,
@@ -63,13 +61,15 @@ const PostList = ({ posts }: PostListProps) => {
                 </p>
               </div>
               {frontMatter.thumbnail && (
-                <Image
-                  src={frontMatter.thumbnail}
-                  alt={frontMatter.title}
-                  width={128} // 이미지의 실제 너비에 맞게 설정
-                  height={128} // 이미지의 실제 높이에 맞게 설정
-                  className="object-cover w-32 h-20 rounded"
-                />
+                <div className="hidden md:block">
+                  <Image
+                    src={frontMatter.thumbnail}
+                    alt={frontMatter.title}
+                    width={128}
+                    height={128}
+                    className="object-cover w-32 h-20 rounded"
+                  />
+                </div>
               )}
             </Link>
           </div>
