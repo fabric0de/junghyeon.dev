@@ -8,6 +8,22 @@ const withMDX = mdx({
 });
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.notion.so",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+    ],
+  },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   async redirects() {
     return [

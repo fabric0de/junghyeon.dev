@@ -2,7 +2,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import PostList, { Post } from "@/components/PostList";
+import PostList, { Post } from "@/components/blog/PostList";
 
 const getPosts = (): Post[] => {
   const postsDirectory = path.join(process.cwd(), "src/posts");
