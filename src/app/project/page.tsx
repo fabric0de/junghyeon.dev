@@ -2,8 +2,8 @@ import ProjectsItem from "@/components/project/ProjectItem";
 import { ProjectData } from "@/types/project";
 
 export default async function Projects() {
-  const databaseId = process.env.NOTION_DATABASE_ID;
-  const notionApiKey = process.env.NOTION_API_KEY;
+  const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID;
+  const notionApiKey = process.env.NEXT_PUBLIC_NOTION_API_KEY;
 
   // Notion API로 프로젝트 데이터 fetch
   const response = await fetch(
