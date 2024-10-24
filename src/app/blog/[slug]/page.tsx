@@ -3,7 +3,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import BlogContent from "@/components/BlogContent";
+import BlogContent from "@/components/blog/BlogContent";
 import { Metadata } from "next";
 
 type BlogPostProps = {
