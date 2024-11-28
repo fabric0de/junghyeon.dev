@@ -65,6 +65,11 @@ const Header = () => {
             <li>
               <Link href="/project">Projects</Link>
             </li>
+            <li>
+              <a href="https://www.rallit.com/resumes/1136443@solee3013/%EA%B9%80%EC%A0%95%ED%98%84">
+                Resume
+              </a>
+            </li>
           </ul>
         </nav>
         <div className="flex items-center space-x-4">
