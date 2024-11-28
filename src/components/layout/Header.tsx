@@ -60,13 +60,20 @@ const Header = () => {
         <nav>
           <ul className="flex gap-5">
             <li>
-              <Link href="/">Blog</Link>
+              <Link href="/" className="hover:text-gray-400">
+                Blog
+              </Link>
             </li>
             <li>
-              <Link href="/project">Projects</Link>
+              <Link href="/project" className="hover:text-gray-400">
+                Projects
+              </Link>
             </li>
             <li>
-              <a href="https://www.rallit.com/resumes/1136443@solee3013/%EA%B9%80%EC%A0%95%ED%98%84">
+              <a
+                href="https://www.rallit.com/resumes/1136443@solee3013/%EA%B9%80%EC%A0%95%ED%98%84"
+                className="hover:text-gray-400"
+              >
                 Resume
               </a>
             </li>
@@ -77,6 +84,7 @@ const Header = () => {
             href="https://github.com/fabric0de"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-400"
           >
             <FaGithub className="text-2xl" />
           </a>
@@ -84,30 +92,40 @@ const Header = () => {
             href="https://fabric0de.gitbook.io/fabric0des-wiki/"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-400"
           >
             <SiGitbook className="text-2xl" />
           </a>
           <div className="relative">
-            <button onClick={toggleDarkMode} className="text-2xl">
+            <button
+              onClick={toggleDarkMode}
+              className="text-2xl hover:text-gray-400"
+            >
               {getIcon()}
             </button>
             {showOptions && (
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20">
+              <div className="absolute right-0 mt-2  bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20">
                 <button
                   onClick={() => handleDarkModeChange("system")}
-                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
+                  className="block w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300
+                  rounded-t-md
+                  hover:bg-gray-300 dark:hover:text-gray-700
+                  "
                 >
                   System
                 </button>
                 <button
                   onClick={() => handleDarkModeChange("light")}
-                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
+                  className="block w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300
+                  hover:bg-gray-300 dark:hover:text-gray-700"
                 >
                   Light
                 </button>
                 <button
                   onClick={() => handleDarkModeChange("dark")}
-                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
+                  className="block w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300
+                  rounded-b-md
+                  hover:bg-gray-300 dark:hover:text-gray-700"
                 >
                   Dark
                 </button>
